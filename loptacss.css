@@ -1,0 +1,142 @@
+
+
+body{
+
+margin: 0%;
+padding: 0%;
+height: 100vh;  
+
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+
+
+}
+
+h2{
+    position: relative;
+    font-size: 6vw;
+    color: #252839;
+    -webkit-text-stroke: 0.3vw #383d52;
+    text-transform: uppercase;
+}
+h2::before{
+    content: attr(data-text);
+    position:absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 100%;
+    color: #01fe87;
+    -webkit-text-stroke: 0.3vw #383d52;
+    border-left: 2px solid #01fe87;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate{
+0%
+{
+    width: 0;
+}
+70%
+{
+    width:100%;
+}
+}
+
+.lopta{
+position: relative;
+width: 700px;
+height: 450px;
+
+background-image: url(slike/pozadina.jpg)   ;
+background-repeat: no-repeat;
+background-size: cover;
+
+
+}
+
+.lopta::after{
+content: "";
+position: center;
+width: 100px;
+height: 100px;
+top: 0%;
+left: 0%;
+box-shadow: 0 0 30px 16px black inset;
+
+}
+
+.ball{
+   
+            
+    position: absolute;
+    top: calc(300px - 40px) ;
+    left: 0px;
+    border-top: 20px solid #ffff33;
+    border-right: 17px solid #36ffff;
+    border-bottom: 17px solid #7f00ff;
+    border-left: 20px solid red;
+    border-radius: 17%;
+    animation: ball 2s ease-out infinite alternate;
+    z-index: 99;
+}
+
+@keyframes ball{
+    to{
+        left: calc(100% - 70px);
+        transform: rotate(888deg)
+    }
+
+ 
+}
+.hov{
+    position: center;
+    width: 40px;
+    height: 40px;
+    top: calc(300px - 40px);
+    left: 0px;
+    border-radius: 20%;
+    animation: shadow 2s ease-out infinite alternate;
+    box-shadow: -10px -10px 15px black inset;}
+    
+
+@keyframes shadow{
+    to{
+        left:calc(100% - 70px);
+    }
+}
+
+.hov:hover{
+    background-color: green;
+}
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #353842;
+}
+.container {
+  display: flex;
+  width: 420px;
+  padding: 50px 0;
+  border-radius: 8px;
+  background: #fff;
+  row-gap: 30px;
+  flex-direction: column;
+  align-items: center;
+}
